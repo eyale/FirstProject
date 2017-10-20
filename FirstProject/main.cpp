@@ -45,18 +45,51 @@ int main(int argc, const char * argv[]) {
 //        }
 //    }
     
-    //    Лабараторная 3
-    double a, x, n = 5;
+//Лабараторная 3
+//    double a, x, n = 5;
+//
+//    printf("Enter a = ");
+//    scanf("%lf", &a);
+//
+//    printf("Enter x = ");
+//    scanf("%lf", &x);
+//
+//    for ( ; x <= n; x++ ) {
+//        x+=a;
+//        x*=x;
+//        printf("x = %f\t a = %f\n", x, a);
+//    }
+//
     
-    printf("Enter a = ");
-    scanf("%lf", &a);
-    
+    //Сходящийся ряд
+    double x, eps, result, step, ch, zn, i;
+
     printf("Enter x = ");
     scanf("%lf", &x);
+    printf("Enter epsilon = ");
+    scanf("%lf", &eps);
     
-    for ( ; x <= n; x++ ) {
-        x+=a;
-        x*=x;
-        printf("x = %f\t a = %f\n", x, a);
+    result = x;
+    step = x;
+    i = 2;
+    ch = x;
+    zn = 1;
+    
+    while (fabs(step) > eps) {
+        ch = ch * x * x;
+        zn = zn * (i * ( i + 1 ));
+        step = ch / zn * (-1);
+        result = result + step;
+        i = i + 2;
     }
+    
+    printf("Result = %lf!\n", result);
+    printf("SIN(x) = %lf!\n", sin(x));
+    return 0;
 }
+
+
+
+
+
+
