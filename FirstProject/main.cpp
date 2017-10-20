@@ -45,7 +45,7 @@ int main(int argc, const char * argv[]) {
 //        }
 //    }
     
-    //    Лабараторная 2
+    //    Лабараторная 3
     double a, x, n = 5;
     
     printf("Enter a = ");
