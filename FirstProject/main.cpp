@@ -3,7 +3,6 @@
 #include <cmath>
 using namespace std;
 
-int main(int argc, const char * argv[]) {
 //    Лабараторная 1
 //    double a, b, c, t, x, y;
 //    printf("Enter a=");
@@ -61,33 +60,66 @@ int main(int argc, const char * argv[]) {
 //    }
 //
     
-    //Сходящийся ряд
-    double x, eps, result, step, ch, zn, i;
-
-    printf("Enter x = ");
-    scanf("%lf", &x);
-    printf("Enter epsilon = ");
-    scanf("%lf", &eps);
+//Сходящийся ряд
+//    double x, eps, result, step, ch, zn, i;
+//
+//    printf("Enter x = ");
+//    scanf("%lf", &x);
+//    printf("Enter epsilon = ");
+//    scanf("%lf", &eps);
+//
+//    result = x;
+//    step = x;
+//    i = 2;
+//    ch = x;
+//    zn = 1;
+//
+//    while (fabs(step) > eps) {
+//        ch = ch * x * x;
+//        zn = zn * (i * ( i + 1 ));
+//        step = ch / zn * (-1);
+//        result = result + step;
+//        i = i + 2;
+//    }
+//
+//    printf("Result = %lf!\n", result);
+//    printf("SIN(x) = %lf!\n", sin(x));
+//    return 0;
     
-    result = x;
-    step = x;
-    i = 2;
-    ch = x;
-    zn = 1;
-    
-    while (fabs(step) > eps) {
-        ch = ch * x * x;
-        zn = zn * (i * ( i + 1 ));
-        step = ch / zn * (-1);
-        result = result + step;
-        i = i + 2;
+int main()
+{
+    int *a;  // указатель на массив
+    int i, j, n, m;
+    system("chcp 1251");
+    system("cls");
+    printf("Введите количество строк: ");
+    scanf("%d", &n);
+    printf("Введите количество столбцов: ");
+    scanf("%d", &m);
+    // Выделение памяти
+    a = (int*)malloc(n*m * sizeof(int));
+    // Ввод элементов массива
+    for (i = 0; i<n; i++)  // цикл по строкам
+    {
+        for (j = 0; j<m; j++)  // цикл по столбцам
+        {
+            printf("a[%d][%d] = ", i, j);
+            scanf("%d", (a + i*m + j));
+        }
     }
-    
-    printf("Result = %lf!\n", result);
-    printf("SIN(x) = %lf!\n", sin(x));
+    // Вывод элементов массива
+    for (i = 0; i<n; i++)  // цикл по строкам
+    {
+        for (j = 0; j<m; j++)  // цикл по столбцам
+        {
+            printf("%5d ", *(a + i*m + j)); // 5 знакомест под элемент массива
+        }
+        printf("\n");
+    }
+    free(a);
+    getchar();   getchar();
     return 0;
 }
-
 
 
 
