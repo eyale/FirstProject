@@ -1,6 +1,8 @@
 #include <iostream>
 #include <stdio.h>
 #include <cmath>
+#include <cstdlib>
+
 using namespace std;
 
 //    Лабараторная 1
@@ -85,43 +87,92 @@ using namespace std;
 //    printf("Result = %lf!\n", result);
 //    printf("SIN(x) = %lf!\n", sin(x));
 //    return 0;
-    
-int main()
-{
-    int *a;  // указатель на массив
-    int i, j, n, m;
-    system("chcp 1251");
-    system("cls");
-    printf("Введите количество строк: ");
-    scanf("%d", &n);
-    printf("Введите количество столбцов: ");
-    scanf("%d", &m);
-    // Выделение памяти
-    a = (int*)malloc(n*m * sizeof(int));
-    // Ввод элементов массива
-    for (i = 0; i<n; i++)  // цикл по строкам
-    {
-        for (j = 0; j<m; j++)  // цикл по столбцам
-        {
-            printf("a[%d][%d] = ", i, j);
-            scanf("%d", (a + i*m + j));
-        }
-    }
-    // Вывод элементов массива
-    for (i = 0; i<n; i++)  // цикл по строкам
-    {
-        for (j = 0; j<m; j++)  // цикл по столбцам
-        {
-            printf("%5d ", *(a + i*m + j)); // 5 знакомест под элемент массива
-        }
-        printf("\n");
-    }
-    free(a);
-    getchar();   getchar();
-    return 0;
-}
 
 
+// Создание двухмерного динамического массива
+//int main()
+//{
+//    int *a;  // указатель на массив
+//    int i, j, n, m;
+//    system("chcp 1251");
+//    system("cls");
+//    printf("Введите количество строк: ");
+//    scanf("%d", &n);
+//    printf("Введите количество столбцов: ");
+//    scanf("%d", &m);
+//    // Выделение памяти
+//    a = (int*)malloc(n*m * sizeof(int));
+//    // Ввод элементов массива
+//    for (i = 0; i<n; i++)  // цикл по строкам
+//    {
+//        for (j = 0; j<m; j++)  // цикл по столбцам
+//        {
+//            printf("a[%d][%d] = ", i, j);
+//            scanf("%d", (a + i*m + j));
+//        }
+//    }
+//    // Вывод элементов массива
+//    for (i = 0; i<n; i++)  // цикл по строкам
+//    {
+//        for (j = 0; j<m; j++)  // цикл по столбцам
+//        {
+//            printf("%5d ", *(a + i*m + j)); // 5 знакомест под элемент массива
+//        }
+//        printf("\n");
+//    }
+//    free(a);
+//    getchar();   getchar();
+//    return 0;
+//}
+
+//Задан целочисленный вектор А (10).
+//Построить вектор В (10), приняв
+//в качестве первых его компонент все отрицательные
+//компоненты вектора А (с сохранением порядка следования),
+//а в качестве остальных - все неотрицательные компоненты вектора А.
+//Распечатать А и В.
+//int main ()
+//{
+//
+//    int arrayA [10], arrayB [10], i, j;
+//
+//    srand(time(NULL));
+//
+//    for(i = 0; i < 10; i++)
+//    {
+//        arrayA[i] = rand() % 10 - rand() % 10;
+//    }
+//    j=0;
+//    for(i = 0; i < 10; i++)
+//    {
+//
+//        if (arrayA[i] < 0) {
+//            arrayB[j] = arrayA[i];
+//            j++;
+//        }
+//    }
+//    for(i = 0; i < 10; i++)
+//    {
+//
+//        if (arrayA[i] >= 0) {
+//            arrayB[j] = arrayA[i];
+//            j++;
+//        }
+//
+//    }
+//    printf("Array A ");
+//    for(i = 0; i < 10; i++)
+//    {
+//        printf("%d ", arrayA[i]);
+//    }
+//    printf("\n");
+//    printf("Array B ");
+//    for(i = 0; i < 10; i++)
+//    {
+//        printf("%d ", arrayB[i]);
+//    }
+//    printf("\n");
+//}
 
 
 
