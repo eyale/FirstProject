@@ -62,7 +62,7 @@ using namespace std;
 //    }
 //
     
-//Сходящийся ряд
+// Лабораторная 5 Сходящийся ряд
 //    double x, eps, result, step, ch, zn, i;
 //
 //    printf("Enter x = ");
@@ -88,10 +88,8 @@ using namespace std;
 //    printf("SIN(x) = %lf!\n", sin(x));
 //    return 0;
 
-
 // Создание двухмерного динамического массива
-//int main()
-//{
+//int main() {
 //    int *a;  // указатель на массив
 //    int i, j, n, m;
 //    system("chcp 1251");
@@ -131,48 +129,74 @@ using namespace std;
 //компоненты вектора А (с сохранением порядка следования),
 //а в качестве остальных - все неотрицательные компоненты вектора А.
 //Распечатать А и В.
-//int main ()
-//{
+//int main (){
 //
 //    int arrayA [10], arrayB [10], i, j;
 //
 //    srand(time(NULL));
 //
-//    for(i = 0; i < 10; i++)
-//    {
+//    for(i = 0; i < 10; i++) {
 //        arrayA[i] = rand() % 10 - rand() % 10;
 //    }
 //    j=0;
-//    for(i = 0; i < 10; i++)
-//    {
-//
+//    for(i = 0; i < 10; i++)  {
 //        if (arrayA[i] < 0) {
 //            arrayB[j] = arrayA[i];
 //            j++;
 //        }
 //    }
-//    for(i = 0; i < 10; i++)
-//    {
-//
+//    for(i = 0; i < 10; i++) {
 //        if (arrayA[i] >= 0) {
 //            arrayB[j] = arrayA[i];
 //            j++;
 //        }
-//
 //    }
 //    printf("Array A ");
-//    for(i = 0; i < 10; i++)
-//    {
+//    for(i = 0; i < 10; i++) {
 //        printf("%d ", arrayA[i]);
 //    }
 //    printf("\n");
 //    printf("Array B ");
-//    for(i = 0; i < 10; i++)
-//    {
+//    for(i = 0; i < 10; i++) {
 //        printf("%d ", arrayB[i]);
 //    }
 //    printf("\n");
 //}
 
 
+// Матрица размещена в одномерном массиве по строкам.
+// Поменять местами К-й и L-й столбцы. Результат представить в виде матрицы
+
+int main () {
+    int matrix [5][2], temp, i, j;
+    srand(time(NULL));
+    
+    for (i=0; i<5; i++) {
+        for (j=0; j<2; j++) {
+            matrix[i][j] = rand() % 10;
+        }
+    }
+    
+    printf("Исходный массив \n");
+    for (i=0; i<5; i++) {
+        for (j=0; j<2; j++) {
+            printf("%5d", matrix[i][j]);
+        }
+        printf("\n");
+    }
+ 
+    printf("Результирующий массив \n");
+    for (i=0; i<5; i++) {
+        temp = matrix[i][1];
+        matrix[i][1] = matrix[i][0];
+        matrix[i][0] = temp;
+    }
+    for (i=0; i<5; i++) {
+        for (j=0; j<2; j++) {
+            printf("%5d", matrix[i][j]);
+        }
+        printf("\n");
+    }
+   printf("\n");
+}
 
