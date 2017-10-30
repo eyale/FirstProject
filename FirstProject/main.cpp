@@ -168,35 +168,48 @@ using namespace std;
 // Поменять местами К-й и L-й столбцы. Результат представить в виде матрицы
 
 int main () {
-    int matrix [5][2], temp, i, j;
+    int rows = 5, columns = 3, columnToChange, columnToChangeWith;
+   
+    int matrix [rows][columns], temp, i, j;
     srand(time(NULL));
     
-    for (i=0; i<5; i++) {
-        for (j=0; j<2; j++) {
+    for (i=0; i<rows; i++) {
+        for (j=0; j<columns; j++) {
             matrix[i][j] = rand() % 10;
         }
     }
     
     printf("Исходный массив \n");
-    for (i=0; i<5; i++) {
-        for (j=0; j<2; j++) {
+    for (i=0; i<rows; i++) {
+        for (j=0; j<columns; j++) {
             printf("%5d", matrix[i][j]);
         }
         printf("\n");
     }
- 
+    
+    printf("Какой столбец поменть местами? ");
+    scanf("%d", &columnToChange);
+    printf("С каким столбцом поменять? ");
+    scanf("%d", &columnToChangeWith);
+    
+    printf("%d \t", columnToChange);
+    printf("%d \n", columnToChangeWith);
+    
     printf("Результирующий массив \n");
-    for (i=0; i<5; i++) {
-        temp = matrix[i][1];
-        matrix[i][1] = matrix[i][0];
-        matrix[i][0] = temp;
+    for (i=0; i<rows; i++) {
+        temp = matrix[i][columnToChange-1];
+        matrix[i][columnToChange-1] = matrix[i][columnToChangeWith-1];
+        matrix[i][columnToChangeWith-1] = temp;
     }
-    for (i=0; i<5; i++) {
-        for (j=0; j<2; j++) {
+    for (i=0; i<rows; i++) {
+        for (j=0; j<columns; j++) {
             printf("%5d", matrix[i][j]);
         }
         printf("\n");
     }
    printf("\n");
 }
+
+
+
 
