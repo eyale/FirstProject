@@ -167,49 +167,112 @@ using namespace std;
 // Матрица размещена в одномерном массиве по строкам.
 // Поменять местами К-й и L-й столбцы. Результат представить в виде матрицы
 
-int main () {
-    int rows = 5, columns = 3, columnToChange, columnToChangeWith;
-   
-    int matrix [rows][columns], temp, i, j;
+//int main () {
+//    int rows = 5, columns = 3, columnToChange, columnToChangeWith;
+//
+//    int matrix [rows][columns], temp, i, j;
+//    srand(time(NULL));
+//
+//    for (i=0; i<rows; i++) {
+//        for (j=0; j<columns; j++) {
+//            matrix[i][j] = rand() % 10;
+//        }
+//    }
+//
+//    printf("Исходный массив \n");
+//    for (i=0; i<rows; i++) {
+//        for (j=0; j<columns; j++) {
+//            printf("%5d", matrix[i][j]);
+//        }
+//        printf("\n");
+//    }
+//
+//    printf("Какой столбец поменть местами? ");
+//    scanf("%d", &columnToChange);
+//    printf("С каким столбцом поменять? ");
+//    scanf("%d", &columnToChangeWith);
+//
+//    printf("%d \t", columnToChange);
+//    printf("%d \n", columnToChangeWith);
+//
+//    printf("Результирующий массив \n");
+//    for (i=0; i<rows; i++) {
+//        temp = matrix[i][columnToChange-1];
+//        matrix[i][columnToChange-1] = matrix[i][columnToChangeWith-1];
+//        matrix[i][columnToChangeWith-1] = temp;
+//    }
+//    for (i=0; i<rows; i++) {
+//        for (j=0; j<columns; j++) {
+//            printf("%5d", matrix[i][j]);
+//        }
+//        printf("\n");
+//    }
+//   printf("\n");
+//}
+
+// Лабораторная 10
+// Вычислить z = (s1 + s2)/(k1+k2),
+// где s1 и k1 - сумма и количество положительных элементов массива X(N);
+// s2 и k2 - сумма и количество положительных элементов массива Y(M).
+
+//int calculateSumAndQuantity(int * arrayA, int * arrayB, K1, K2);
+int fillArr (int * x, int length);
+int printArr (int * x, int length);
+int count (int * x, int length, int * S, int * P);
+int allocateMemory (int ** x, int * length);
+
+int main() {
+    int *arrayA, *arrayB, K1, K2, S1=0, S2=0, P1=0, P2=0;
     srand(time(NULL));
+
+    allocateMemory(&arrayA, &K1);
+    fillArr(arrayA, K1);
+    printArr(arrayA, K1);
     
-    for (i=0; i<rows; i++) {
-        for (j=0; j<columns; j++) {
-            matrix[i][j] = rand() % 10;
-        }
-    }
+    allocateMemory(&arrayB, &K2);
+    fillArr(arrayB, K2);
+    printArr(arrayB, K2);
     
-    printf("Исходный массив \n");
-    for (i=0; i<rows; i++) {
-        for (j=0; j<columns; j++) {
-            printf("%5d", matrix[i][j]);
-        }
-        printf("\n");
-    }
+    count(arrayA, K1, &S1, &P1);
+    count(arrayB, K2, &S2, &P2);
     
-    printf("Какой столбец поменть местами? ");
-    scanf("%d", &columnToChange);
-    printf("С каким столбцом поменять? ");
-    scanf("%d", &columnToChangeWith);
-    
-    printf("%d \t", columnToChange);
-    printf("%d \n", columnToChangeWith);
-    
-    printf("Результирующий массив \n");
-    for (i=0; i<rows; i++) {
-        temp = matrix[i][columnToChange-1];
-        matrix[i][columnToChange-1] = matrix[i][columnToChangeWith-1];
-        matrix[i][columnToChangeWith-1] = temp;
-    }
-    for (i=0; i<rows; i++) {
-        for (j=0; j<columns; j++) {
-            printf("%5d", matrix[i][j]);
-        }
-        printf("\n");
-    }
-   printf("\n");
+    cout << "z=" << (double)(S1 + S2)/(P1+P2) << endl;
+    delete []arrayA;
+    delete []arrayB;
+    return 0;
 }
 
+int fillArr (int * x, int length) {
+    for (int i = 0; i < length; i++) {
+        x[i] = rand() % 10 - rand() % 10;
+    }
+    return 0;
+}
 
+int printArr (int * x, int length) {
+    cout << "Ваш массив:  [ ";
+    for (int i = 0; i < length; i++) {
+        cout << x[i] << ", ";
+    }
+    cout << "] \n";
+    return 0;
+}
+
+int count (int * x, int length, int * S, int * P) {
+    for (int i = 0; i < length; i++) {
+        if (x[i] > 0) {
+            *S += x[i];
+            (*P)++;
+        }
+    }
+    return 0;
+}
+
+int allocateMemory (int ** x, int * length) {
+    cout << "Введите количество елементов массива: ";
+    scanf("%d", &*length);
+    *x = new int [*length];
+    return 0;
+}
 
 
