@@ -216,63 +216,102 @@ using namespace std;
 // s2 и k2 - сумма и количество положительных элементов массива Y(M).
 
 //int calculateSumAndQuantity(int * arrayA, int * arrayB, K1, K2);
-int fillArr (int * x, int length);
-int printArr (int * x, int length);
-int count (int * x, int length, int * S, int * P);
-int allocateMemory (int ** x, int * length);
+//int fillArr (int * x, int length);
+//int printArr (int * x, int length);
+//int count (int * x, int length, int * S, int * P);
+//int allocateMemory (int ** x, int * length);
+//
+//int main() {
+//    int *arrayA, *arrayB, K1, K2, S1=0, S2=0, P1=0, P2=0;
+//    srand(time(NULL));
+//
+//    allocateMemory(&arrayA, &K1);
+//    fillArr(arrayA, K1);
+//    printArr(arrayA, K1);
+//
+//    allocateMemory(&arrayB, &K2);
+//    fillArr(arrayB, K2);
+//    printArr(arrayB, K2);
+//
+//    count(arrayA, K1, &S1, &P1);
+//    count(arrayB, K2, &S2, &P2);
+//
+//    cout << "z=" << (double)(S1 + S2)/(P1+P2) << endl;
+//    delete []arrayA;
+//    delete []arrayB;
+//    return 0;
+//}
+//
+//int fillArr (int * x, int length) {
+//    for (int i = 0; i < length; i++) {
+//        x[i] = rand() % 10 - rand() % 10;
+//    }
+//    return 0;
+//}
+//
+//int printArr (int * x, int length) {
+//    cout << "Ваш массив:  [ ";
+//    for (int i = 0; i < length; i++) {
+//        cout << x[i] << ", ";
+//    }
+//    cout << "] \n";
+//    return 0;
+//}
+//
+//int count (int * x, int length, int * S, int * P) {
+//    for (int i = 0; i < length; i++) {
+//        if (x[i] > 0) {
+//            *S += x[i];
+//            (*P)++;
+//        }
+//    }
+//    return 0;
+//}
+//
+//int allocateMemory (int ** x, int * length) {
+//    cout << "Введите количество елементов массива: ";
+//    scanf("%d", &*length);
+//    *x = new int [*length];
+//    return 0;
+//}
 
-int main() {
-    int *arrayA, *arrayB, K1, K2, S1=0, S2=0, P1=0, P2=0;
-    srand(time(NULL));
+#include <cstdlib>
+#include <iostream>
+#include <fstream>
+#include <iomanip>
 
-    allocateMemory(&arrayA, &K1);
-    fillArr(arrayA, K1);
-    printArr(arrayA, K1);
+int f1(int, int);
+int f2(int, int);
+
+using namespace std;
+
+int main(int argc, char **argv) {
+    int a, b;
     
-    allocateMemory(&arrayB, &K2);
-    fillArr(arrayB, K2);
-    printArr(arrayB, K2);
+    cin >> a >> b;
     
-    count(arrayA, K1, &S1, &P1);
-    count(arrayB, K2, &S2, &P2);
+    cout <<"НОД делением: "<< f1(a, b) << endl;
+    cout <<"НОД вычитанием: "<< f2(a, b) <<endl;
     
-    cout << "z=" << (double)(S1 + S2)/(P1+P2) << endl;
-    delete []arrayA;
-    delete []arrayB;
     return 0;
+    
 }
 
-int fillArr (int * x, int length) {
-    for (int i = 0; i < length; i++) {
-        x[i] = rand() % 10 - rand() % 10;
+int f1 (int a, int b) {
+    while(a && b) {
+        if(a > b)
+            a = a % b;
+        else b = b % a;
     }
-    return 0;
+    return a + b;
 }
-
-int printArr (int * x, int length) {
-    cout << "Ваш массив:  [ ";
-    for (int i = 0; i < length; i++) {
-        cout << x[i] << ", ";
+int f2 (int a, int b) {
+    while(a != b) {
+        if(a > b)
+            a = a - b;
+        else b = b - a;
     }
-    cout << "] \n";
-    return 0;
-}
-
-int count (int * x, int length, int * S, int * P) {
-    for (int i = 0; i < length; i++) {
-        if (x[i] > 0) {
-            *S += x[i];
-            (*P)++;
-        }
-    }
-    return 0;
-}
-
-int allocateMemory (int ** x, int * length) {
-    cout << "Введите количество елементов массива: ";
-    scanf("%d", &*length);
-    *x = new int [*length];
-    return 0;
+    return a;
 }
 
 
