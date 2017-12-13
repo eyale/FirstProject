@@ -275,43 +275,43 @@ using namespace std;
 //    return 0;
 //}
 
-#include <cstdlib>
-#include <iostream>
-#include <fstream>
-#include <iomanip>
-
-int f1(int, int);
-int f2(int, int);
-
-using namespace std;
-
-int main(int argc, char **argv) {
-    int a, b;
-    
-    cin >> a >> b;
-    
-    cout <<"НОД делением: "<< f1(a, b) << endl;
-    cout <<"НОД вычитанием: "<< f2(a, b) <<endl;
-    
-    return 0;
-    
-}
-
-int f1 (int a, int b) {
-    while(a && b) {
-        if(a > b)
-            a = a % b;
-        else b = b % a;
-    }
-    return a + b;
-}
-int f2 (int a, int b) {
-    while(a != b) {
-        if(a > b)
-            a = a - b;
-        else b = b - a;
-    }
-    return a;
-}
-
+//#include <cstdlib>
+//#include <iostream>
+//#include <fstream>
+//#include <iomanip>
+//
+//int f1(int, int);
+//int f2(int, int);
+//
+//using namespace std;
+//
+//int main(int argc, char **argv) {
+//    int a, b;
+//
+//    cin >> a >> b;
+//
+//    cout <<"НОД делением: "<< f1(a, b) << endl;
+//    cout <<"НОД вычитанием: "<< f2(a, b) <<endl;
+//
+//    return 0;
+//
+//}
+//
+//int f1 (int a, int b) {
+//    while(a && b) {
+//        if(a > b)
+//            a = a % b;
+//        else b = b % a;
+//    }
+//    return a + b;
+//}
+//int f2 (int a, int b) {
+//    while(a != b) {
+//        if(a > b)
+//            a = a - b;
+//        else b = b - a;
+//    }
+//    return a;
+//}
+//
 
