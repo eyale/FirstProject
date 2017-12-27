@@ -1,11 +1,12 @@
-#include <iostream>
-#include <stdio.h>
-#include <cmath>
-#include <cstdlib>
-
-using namespace std;
-
-//    Лабараторная 1
+//    Лабараторная 1 ----------------------------------------------------
+//#include <iostream>
+//#include <stdio.h>
+//#include <cmath>
+//#include <cstdlib>
+//
+//using namespace std;
+//
+//int main() {
 //    double a, b, c, t, x, y;
 //    printf("Enter a=");
 //    scanf("%lf", &a);
@@ -21,8 +22,19 @@ using namespace std;
 //
 //    printf("Your result x=%f\n", x = exp(-a*b) + cos(b));
 //    printf("Your result y=%f\n", y = b * cos(t * sqrt(c) + b));
-    
-//    Лабараторная 2
+//}
+//    Лабараторная 1 ----------------------------------------------------
+
+
+//    Лабараторная 2 ----------------------------------------------------
+//#include <iostream>
+//#include <stdio.h>
+//#include <cmath>
+//#include <cstdlib>
+//
+//using namespace std;
+//
+//int main() {
 //    double a, b, x1 = 0.4, x2 = 2, dx = 0.2, y;
 //
 //    printf("Enter a = ");
@@ -45,8 +57,19 @@ using namespace std;
 //            printf("x = %f\t y = %f\n", x1, y);
 //        }
 //    }
+//}
+//    Лабараторная 2 ----------------------------------------------------
+
     
-//Лабараторная 3
+//    Лабараторная 3 ----------------------------------------------------
+//#include <iostream>
+//#include <stdio.h>
+//#include <cmath>
+//#include <cstdlib>
+//
+//using namespace std;
+//
+//int main() {
 //    double a, x, n = 5;
 //
 //    printf("Enter a = ");
@@ -60,9 +83,20 @@ using namespace std;
 //        x*=x;
 //        printf("x = %f\t a = %f\n", x, a);
 //    }
-//
+//}
+//    Лабараторная 3 ----------------------------------------------------
+
+
     
-// Лабораторная 5 Сходящийся ряд
+// Лабораторная 5 Сходящийся ряд ----------------------------------------
+//#include <iostream>
+//#include <stdio.h>
+//#include <cmath>
+//#include <cstdlib>
+//
+//using namespace std;
+//
+//int main() {
 //    double x, eps, result, step, ch, zn, i;
 //
 //    printf("Enter x = ");
@@ -87,8 +121,19 @@ using namespace std;
 //    printf("Result = %lf!\n", result);
 //    printf("SIN(x) = %lf!\n", sin(x));
 //    return 0;
+//}
+// Лабораторная 5 Сходящийся ряд ----------------------------------------
 
-// Создание двухмерного динамического массива
+
+
+// Создание двухмерного динамического массива----------------------------
+//#include <iostream>
+//#include <stdio.h>
+//#include <cmath>
+//#include <cstdlib>
+//
+//using namespace std;
+//
 //int main() {
 //    int *a;  // указатель на массив
 //    int i, j, n, m;
@@ -122,13 +167,22 @@ using namespace std;
 //    getchar();   getchar();
 //    return 0;
 //}
+// Создание двухмерного динамического массива----------------------------
 
+//-----------------------------------------------------------------------
 //Задан целочисленный вектор А (10).
 //Построить вектор В (10), приняв
 //в качестве первых его компонент все отрицательные
 //компоненты вектора А (с сохранением порядка следования),
 //а в качестве остальных - все неотрицательные компоненты вектора А.
 //Распечатать А и В.
+//#include <iostream>
+//#include <stdio.h>
+//#include <cmath>
+//#include <cstdlib>
+//
+//using namespace std;
+//
 //int main (){
 //
 //    int arrayA [10], arrayB [10], i, j;
@@ -162,11 +216,18 @@ using namespace std;
 //    }
 //    printf("\n");
 //}
+//-----------------------------------------------------------------------
 
-
+//-----------------------------------------------------------------------
 // Матрица размещена в одномерном массиве по строкам.
 // Поменять местами К-й и L-й столбцы. Результат представить в виде матрицы
-
+//#include <iostream>
+//#include <stdio.h>
+//#include <cmath>
+//#include <cstdlib>
+//
+//using namespace std;
+//
 //int main () {
 //    int rows = 5, columns = 3, columnToChange, columnToChangeWith;
 //
@@ -209,13 +270,21 @@ using namespace std;
 //    }
 //   printf("\n");
 //}
+//-----------------------------------------------------------------------
 
-// Лабораторная 10
+
+// Лабораторная 10-------------------------------------------------------
 // Вычислить z = (s1 + s2)/(k1+k2),
 // где s1 и k1 - сумма и количество положительных элементов массива X(N);
 // s2 и k2 - сумма и количество положительных элементов массива Y(M).
-
-//int calculateSumAndQuantity(int * arrayA, int * arrayB, K1, K2);
+//#include <iostream>
+//#include <stdio.h>
+//#include <cmath>
+//#include <cstdlib>
+//
+//using namespace std;
+//
+//int calculateSumAndQuantity(int * arrayA, int * arrayB, int K1, int K2);
 //int fillArr (int * x, int length);
 //int printArr (int * x, int length);
 //int count (int * x, int length, int * S, int * P);
@@ -274,7 +343,9 @@ using namespace std;
 //    *x = new int [*length];
 //    return 0;
 //}
+// Лабораторная 10-------------------------------------------------------
 
+// Лабораторная 11 ------------------------------------------------------
 //#include <cstdlib>
 //#include <iostream>
 //#include <fstream>
@@ -313,5 +384,266 @@ using namespace std;
 //    }
 //    return a;
 //}
-//
+// Лабораторная 11 ------------------------------------------------------
 
+
+// Удаление дубликатов из массива ---------------------------------------
+// the path to file:
+// /Users/_____/Library/Developer/Xcode/DerivedData/FirstProject-fsohggjfmifnmqfnxawnzevjfzxy/Build/Products/Debug
+// https://stackoverflow.com/questions/23438393/new-to-xcode-cant-open-files-in-c
+// #include <cstdlib>
+// #include <iostream>
+// #include <fstream>
+// #include <iomanip>
+//
+// using namespace std;
+//
+// struct Node {
+//     int a, tmp;
+//     int flag = 0;
+//     struct Node *next;
+// };
+//
+// Node *cur=NULL, *cur1=NULL, *head=NULL, *tail=NULL, *newN=NULL;
+//
+// void addNode (int);
+// int printList ();
+// int delNode (int);
+// void freeList();
+//
+// int main(int argc, char **argv) {
+//     fstream x;
+//     int tmp;
+//
+//     x.open ("numbers.txt", ios :: in);
+//
+//     while (x.good()) {
+//         x >> tmp;
+//         addNode (tmp);
+//     }
+//
+//     printList();
+//     delNode(3);
+//     delNode(2);
+//     delNode(5);
+//     cout << endl;
+//     printList();
+//     freeList();
+//     printList();
+//     return 0;
+// }
+//
+// void addNode (int tmp) {
+//     if (!head) {
+//         head = new struct Node();
+//         cur = tail = head;
+//         cur1 = head;
+//         head -> a = tmp;
+//         head -> next = NULL;
+//     }
+//     else {
+//         newN = new struct Node();
+//         newN -> next = NULL;
+//         newN -> a = tmp;
+//         if (newN -> a < head -> a) {
+//             newN -> next = head;
+//             head = newN;
+//         }
+//         else if (newN -> a > tail -> a) {
+//             tail -> next = newN;
+//             tail = newN;
+//         }
+//         else {
+//             cur = head;
+//             while (cur -> a < newN -> a) {
+//                 cur1 = cur;
+//                 cur = cur -> next;
+//             }
+//             newN -> next = cur1 -> next;
+//             cur1 -> next = newN;
+//         }
+//     }
+// }
+// int printList () {
+//     if (!head) {
+//         cout << "\nСписок пуст "<< endl;
+//         return 1;
+//     }
+//     cur = head;
+//     while (cur) {
+//         cout << cur -> a << " ";
+//         cur = cur -> next;
+//     }
+//
+//     return 0;
+// }
+//
+// int delNode (int tmp) {
+//     int flag = 0;
+//     cur = head;
+//     cur1 = head;
+//     while (cur -> a != tmp) {
+//         cur1 = cur;
+//         if (cur -> next) {
+//             cur = cur -> next;
+//         }
+//         else {
+//             flag = 1;
+//             break;
+//         }
+//     }
+//
+//     if (flag) {
+//         cout <<"Элемент не найден"<< endl;
+//         return 1;
+//     }
+//     if (head != tail) {
+//         if (cur == tail) {
+//             delete tail;
+//             tail = cur1;
+//             tail -> next = NULL;
+//         }
+//         else if (cur == head) {
+//             head = head -> next;
+//             delete cur;
+//         }
+//         else {
+//             cur1 -> next = cur -> next;
+//             delete cur;
+//         }
+//     }
+//     else delete head;
+//
+//     return 0;
+// }
+//
+// void freeList() {
+//     cur = head;
+//     while(cur) {
+//         cur1 = cur;
+//         cur = cur -> next;
+//         delete cur1;
+//     }
+//     head = NULL;
+// }
+// Удаление дубликатов из массива ---------------------------------------
+
+
+// Сортировка Шелла -----------------------------------------------------
+// #include <cstdlib>
+// #include <iostream>
+// #include <fstream>
+// #include <iomanip>
+
+// using namespace std;
+
+
+// int main(int argc, char **argv) {
+//  int SIZE = 20;
+//  int i, j, temp;
+//  int *x;
+
+//  x = new int [SIZE];
+
+//  srand(time(NULL));
+
+//  for (i = 0; i < SIZE; i++)
+//  x[i] = rand () % 50;
+
+//  for (i = 0; i < SIZE; i++) {
+//    cout << x[i] << " ";
+//  }
+//  cout << endl;
+
+//  int step = SIZE / 2;
+
+//  while (step) {
+//    for (i = 0; i < (SIZE - step); i++) {
+//      j = i;
+//      while (j >= 0 && x[j] > x [j + step]) {
+//        temp = x[j];
+//        x[j] = x[j + step];
+//        x[j + step] = temp;
+//        j--;
+//      }
+//    }
+//    step /= 2;
+//  }
+
+//  for (i = 0; i < SIZE; i++) {
+//    cout << x[i] << " ";
+//  }
+//  cout << endl;
+//  return 0;
+// }
+// Сортировка Шелла -----------------------------------------------------
+
+
+// Сортировка. Слиянием -------------------------------------------------
+//#include <cstdlib>
+//#include <iostream>
+//#include <fstream>
+//#include <iomanip>
+//
+//using namespace std;
+//
+//const int SIZE = 10;
+//
+//void merge (int, int, int*, int*);
+//
+//int main(int argc, char **argv) {
+// int SIZE = 20;
+// int i, j, temp;
+// int *x, *buf;
+//
+// x = new int [SIZE];
+//
+// srand(time(NULL));
+//
+// for (i = 0; i < SIZE; i++)
+// x[i] = rand () % 50;
+//
+// for (i = 0; i < SIZE; i++) {
+//   cout << x[i] << " ";
+// }
+// cout << endl;
+//
+// buf = new int [SIZE];
+//
+// merge (0, SIZE - 1, x, buf);
+// for (i = 0; i < SIZE; i++) {
+//   cout << x[i] << " ";
+// }
+// cout << endl;
+//
+// return 0;
+//
+//}
+//
+//void merge (int left, int right, int *x, int *buf) {
+// if (right == left) return;
+// if (right - left == 1) {
+//   if  (x[right] < x[left])
+//   swap (x[right], x[left]);
+//   return;
+// }
+// int middle = (right + left) / 2;
+// merge (left, middle, x, buf); //вызываем функцию рекурсивно и делимм массив влево каждый раз пополам
+// merge (middle + 1, right, x, buf); //вызываем функцию рекурсивно после того, как доделим массив влево до последнего элемента
+// int xleft = left; //итератор, который будет идти по левой половине
+// int xright = middle + 1; //итератор, который будет идти по правой половине
+// int cur = 0;
+// while (right - left + 1 != cur) {
+//   if (xleft > middle)
+//   buf[cur++] = x[xright++]; // записываем весь хвост, данна яз апись заменяет запись: bur[cur] = x[xright]; cur++; xright++;
+//   else if (xright > right)
+//   buf[cur++] = x[xleft++];
+//   else if (x[xleft] > x[xright])
+//   buf[cur++] = x[xright++];
+//   else
+//   buf[cur++] = x[xleft++];
+// } //переписываем из буфера в исходный массив
+// for (int i = 0; i < cur; i++)
+// x[i + left] = buf[i];
+//}
+// Сортировка. Слиянием -------------------------------------------------
