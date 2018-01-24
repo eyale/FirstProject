@@ -1,4 +1,4 @@
-//    Лабараторная 1 ----------------------------------------------------
+//Лабараторная 1 ----------------------------------------------------
 //#include <iostream>
 //#include <stdio.h>
 //#include <cmath>
@@ -760,54 +760,86 @@
 // Удаление указанного столбца ------------------------------------------
 
 // Вычисление цепной дроби ----------------------------------------------
+//#include <iostream>
+//#include <sstream>
+//#include <string>
+//
+//double solve(int n)
+//{
+//    if (n <= 0)
+//        return 0.0;
+//
+//    double result = n;
+//
+//    for (int i = n - 1; i >= 1; --i)
+//        result = i + 1.0 / result;
+//
+//    return result;
+//}
+//
+//std::string int_to_str(int value)
+//{
+//    std::ostringstream ostr;
+//
+//    ostr << value;
+//
+//    return ostr.str();
+//}
+//
+//std::string build_formula(int n)
+//{
+//    if (n == 1)
+//        return "1";
+//
+//    std::string formula = int_to_str(n);
+//
+//    for (int i = n - 1; i > 1; --i)
+//        formula = "(" + int_to_str(i) + " + 1 / " + formula + ")";
+//
+//    return "1 + 1 / " + formula;
+//}
+//
+//int main()
+//{
+//    std::cout << build_formula(1) << " = " << solve(1) << std::endl;
+//    std::cout << build_formula(2) << " = " << solve(2) << std::endl;
+//    std::cout << build_formula(3) << " = " << solve(3) << std::endl;
+//    std::cout << build_formula(4) << " = " << solve(4) << std::endl;
+//    std::cout << build_formula(5) << " = " << solve(5) << std::endl;
+//
+//    return 0;
+//}
+// Вычисление цепной дроби ----------------------------------------------
+
+// Перевести из массива А в массив B данные так, 
+// что бы сначала шли отрицательные числа, потом положительные. По возрастанию 
 #include <iostream>
-#include <sstream>
-#include <string>
+#include <algorithm>
+#include <iterator>
 
-double solve(int n)
-{
-    if (n <= 0)
-        return 0.0;
+int main() {
+    const int SIZE(8);
+    int a[SIZE] = { 1, -2, -3, 4, 5, -6, 7, -8 }, b[SIZE], i, j, k;
     
-    double result = n;
+    for ( i = 0, j = 0, k = SIZE - 1; i < SIZE; ++i ) {
+        if ( a[i] < 0 )
+        {
+            b[j++] = a[i];
+        }
+    }
+    for ( i = 0; i < SIZE; ++i ) {
+        if ( a[i] > 0 )
+        {
+            b[j++] = a[i];
+        }
+        
+    }
     
-    for (int i = n - 1; i >= 1; --i)
-        result = i + 1.0 / result;
-    
-    return result;
-}
-
-std::string int_to_str(int value)
-{
-    std::ostringstream ostr;
-    
-    ostr << value;
-    
-    return ostr.str();
-}
-
-std::string build_formula(int n)
-{
-    if (n == 1)
-        return "1";
-    
-    std::string formula = int_to_str(n);
-    
-    for (int i = n - 1; i > 1; --i)
-        formula = "(" + int_to_str(i) + " + 1 / " + formula + ")";
-    
-    return "1 + 1 / " + formula;
-}
-
-int main()
-{
-    std::cout << build_formula(1) << " = " << solve(1) << std::endl;
-    std::cout << build_formula(2) << " = " << solve(2) << std::endl;
-    std::cout << build_formula(3) << " = " << solve(3) << std::endl;
-    std::cout << build_formula(4) << " = " << solve(4) << std::endl;
-    std::cout << build_formula(5) << " = " << solve(5) << std::endl;
+    std::cout << "A: ";
+    std::copy(a, a + SIZE, std::ostream_iterator<int>(std::cout, " "));
+    std::cout << "\nB: ";
+    std::copy(b, b + SIZE, std::ostream_iterator<int>(std::cout, " "));
+    std::cout << std::endl;
     
     return 0;
 }
-// Вычисление цепной дроби ----------------------------------------------
-
