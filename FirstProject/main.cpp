@@ -647,3 +647,167 @@
 // x[i + left] = buf[i];
 //}
 // Сортировка. Слиянием -------------------------------------------------
+
+// Удаление указанного столбца ------------------------------------------
+//#include <iostream>
+//#include <clocale>
+//#include <cstdlib>
+//#include <ctime>
+////
+//// Создание матрицы
+////
+//int ** Create( size_t n, size_t m ) {
+//    int ** M = new int * [n];
+//    for ( size_t i = 0; i < n; ++i ) {
+//        M[i] = new int [m];
+//    }
+//    return M;
+//}
+////
+//// Удаление матрицы
+////
+//void Free( int ** M, size_t n ) {
+//    for ( size_t i = 0; i < n; ++i ) {
+//        delete [] M[i];
+//    }
+//    delete [] M;
+//}
+////
+////---- ввод матрицы--------------------------------------
+////
+//void Input( int ** M, size_t n, size_t m ) {
+//    for ( size_t i = 0; i < n; ++i ) {
+//        for ( size_t j = 0; j < m; ++j ) {
+//            std::cout << "M[" << i << "][" << j << "] = ";
+//            std::cin >> M[i][j];
+//        }
+//    }
+//}
+////
+//// заполнение матрицы случайными числами из диапазона [0, 99] -----------
+////
+//void FillRandomNumbers(int **matrix, const size_t rows, const size_t columns)
+//{
+//    srand((unsigned int)time(0)); // инициализируем ПГСЧ
+//
+//    for (size_t row=0; row < rows; row++)
+//        for (size_t column=0; column < columns; column++)
+//            matrix[row][column] = rand() % 100; // присваиваем СЧ
+//}
+////
+////-------- Печать матрицы ------------------------------------------------
+////
+//void Print( int ** M, size_t n, size_t m ) {
+//    for ( size_t i = 0; i < n; ++i ) {
+//        for ( size_t j = 0; j < m; ++j ) {
+//            std::cout<<M[i][j]<<' ';
+//        }
+//        std::cout<<std::endl;
+//    }
+//}
+////
+//// пример обработки матрицы - удалить k столбец матрицы
+////
+//void Process( int ** M, size_t n, size_t m, size_t k) {
+//    for ( size_t i = 0; i < n; ++i ) {
+//        for ( size_t j = k; j < m-1; ++j ) {
+//            M[i][j]=M[i][j+1];
+//        }
+//    }
+//}
+//
+////---------------------------------------------
+//int main()
+//{
+//    setlocale( LC_ALL, "Rus" ); // установление русской локали (windows)
+//
+//    size_t n, m;
+//
+//    // вводим размерность матрицы
+//    std::cout << "Введите количество строк матрицы: ";
+//    std::cin >> n;
+//    std::cout << "Введите количество столбцов матрицы: ";
+//    std::cin >> m;
+//
+//    // выделяем память под матрицу
+//    int ** A = Create( n, m );
+//
+//    // ввод матрицы
+////    Input( A, n, m );
+//    // заполнение случайными числами (вместо ввода)
+//    FillRandomNumbers(A,n,m);
+//
+//    // Вывод матрицы
+//    Print(A,n,m);
+//
+//    std::cout << "Введите Номер столбца матрицы для удаления: ";
+//    int k;std::cin >> k;
+//    // обработка матрицы
+//    Process( A, n, m,k );
+//    m--;
+//
+//    // вывод результата
+//    Print(A,n,m);
+//
+//    // освобождаем память, выделенную под матрицу и вектор
+//    Free( A, n );
+//
+//    // ждём нажатия клавиши перед выходом из приложения (windows)
+//    system( "pause" );
+//
+//    return 0;
+//}
+// Удаление указанного столбца ------------------------------------------
+
+// Вычисление цепной дроби ----------------------------------------------
+#include <iostream>
+#include <sstream>
+#include <string>
+
+double solve(int n)
+{
+    if (n <= 0)
+        return 0.0;
+    
+    double result = n;
+    
+    for (int i = n - 1; i >= 1; --i)
+        result = i + 1.0 / result;
+    
+    return result;
+}
+
+std::string int_to_str(int value)
+{
+    std::ostringstream ostr;
+    
+    ostr << value;
+    
+    return ostr.str();
+}
+
+std::string build_formula(int n)
+{
+    if (n == 1)
+        return "1";
+    
+    std::string formula = int_to_str(n);
+    
+    for (int i = n - 1; i > 1; --i)
+        formula = "(" + int_to_str(i) + " + 1 / " + formula + ")";
+    
+    return "1 + 1 / " + formula;
+}
+
+int main()
+{
+    std::cout << build_formula(1) << " = " << solve(1) << std::endl;
+    std::cout << build_formula(2) << " = " << solve(2) << std::endl;
+    std::cout << build_formula(3) << " = " << solve(3) << std::endl;
+    std::cout << build_formula(4) << " = " << solve(4) << std::endl;
+    std::cout << build_formula(5) << " = " << solve(5) << std::endl;
+    
+    return 0;
+}
+// Вычисление цепной дроби ----------------------------------------------
+
