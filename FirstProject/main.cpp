@@ -813,33 +813,113 @@
 
 // Перевести из массива А в массив B данные так, 
 // что бы сначала шли отрицательные числа, потом положительные. По возрастанию 
-#include <iostream>
-#include <algorithm>
-#include <iterator>
+//#include <iostream>
+//#include <algorithm>
+//#include <iterator>
+//
+//int main() {
+//    const int SIZE(8);
+//    int a[SIZE] = { 1, -2, -3, 4, 5, -6, 7, -8 }, b[SIZE], i, j, k;
+//    
+//    for ( i = 0, j = 0, k = SIZE - 1; i < SIZE; ++i ) {
+//        if ( a[i] < 0 )
+//        {
+//            b[j++] = a[i];
+//        }
+//    }
+//    for ( i = 0; i < SIZE; ++i ) {
+//        if ( a[i] > 0 )
+//        {
+//            b[j++] = a[i];
+//        }
+//        
+//    }
+//    
+//    std::cout << "A: ";
+//    std::copy(a, a + SIZE, std::ostream_iterator<int>(std::cout, " "));
+//    std::cout << "\nB: ";
+//    std::copy(b, b + SIZE, std::ostream_iterator<int>(std::cout, " "));
+//    std::cout << std::endl;
+//    
+//    return 0;
+//}
 
-int main() {
-    const int SIZE(8);
-    int a[SIZE] = { 1, -2, -3, 4, 5, -6, 7, -8 }, b[SIZE], i, j, k;
-    
-    for ( i = 0, j = 0, k = SIZE - 1; i < SIZE; ++i ) {
-        if ( a[i] < 0 )
+//29.10.2018 my test task on exam)
+#include <iostream>
+using namespace std;
+int A[3][5] = {
+    { 5, 2, 4, 1, 3 },
+    { 5, 2, 4, 1, 3 },
+    { 5, 2, 4, 1, 3 }
+};
+
+int vectorSum[5]={0,0,0,0,0};
+
+void printMatrix()
+{
+    for (int i=0; i<3; i++)
+    {
+        for (int j=0; j<5; j++)
         {
-            b[j++] = a[i];
+            cout << "| " << A[i][j] << " |";
+        }
+        cout << endl;
+    }
+    cout << endl;
+}
+
+void calulateSum ()
+{
+    for (int p=0; p<3; p++)
+    {
+        for (int l=0; l<5; l++)
+        {
+            vectorSum[l] += A[p][l];
         }
     }
-    for ( i = 0; i < SIZE; ++i ) {
-        if ( a[i] > 0 )
-        {
-            b[j++] = a[i];
+}
+
+void sortVector()
+{
+    int size = 5, temp;
+    for (int i = 0; i < size - 1; i++) {
+        for (int j = 0; j < size - i - 1; j++) {
+            if (vectorSum[j] > vectorSum[j + 1]) {
+                temp = vectorSum[j];
+                vectorSum[j] = vectorSum[j + 1];
+                vectorSum[j + 1] = temp;
+                for(int k=0; k<3; k++)
+                {
+                    int temp = A[k][j];
+                    A[k][j] = A[k][j+1];
+                    A[k][j+1] = temp;
+                }
+            }
         }
-        
+    }
+}
+
+void printSum()
+{
+    for (int l=0; l<5; l++)
+    {
+        cout << "| " << vectorSum[l] << " |";
     }
     
-    std::cout << "A: ";
-    std::copy(a, a + SIZE, std::ostream_iterator<int>(std::cout, " "));
-    std::cout << "\nB: ";
-    std::copy(b, b + SIZE, std::ostream_iterator<int>(std::cout, " "));
-    std::cout << std::endl;
-    
+    cout << endl;
+}
+
+int main()
+{
+    cout << "ИСХОДНАЯ МАТРИЦА: " << endl;
+    printMatrix();
+
+    calulateSum();
+    printSum();
+    sortVector();
+
+    cout << "ОТСОРТИРОВАННАЯ МАТРИЦА: " << endl;
+    printMatrix();
+    printSum();
     return 0;
 }
